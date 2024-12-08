@@ -3,7 +3,6 @@ import {
 	Marker,
 	Popup,
 	TileLayer,
-	Tooltip,
 	ZoomControl
 } from "react-leaflet";
 import "leaflet/dist/leaflet.css";

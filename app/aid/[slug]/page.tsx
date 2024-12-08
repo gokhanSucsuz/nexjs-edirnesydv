@@ -1,11 +1,12 @@
 import { helpPrograms } from "@/utils/functions";
-import { Params } from "next/dist/server/request/params";
 import React from "react";
+
+type ParamsType = Promise<{ slug: string }>;
 
 const AidPage = async ({
 	params
 }: {
-	params: Params;
+	params: ParamsType
 }) => {
     const { slug } = await params;
     const aid = helpPrograms.find(p => {
@@ -14,7 +15,7 @@ const AidPage = async ({
 
    
     return <div>
-        aid page
+        {aid?.name}
     </div>
 };
 
