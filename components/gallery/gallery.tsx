@@ -7,11 +7,11 @@ import {
 	DialogTitle,
 	DialogTrigger
 } from "@/components/ui/dialog";
-import { fetchedImages } from "@/utils/fetchImages";
 import PhotoShow from "./photoShow";
+import { fetchImagesFromFolder } from "@/utils/fetchImages";
 
 const Gallery = async () => {
-	const images = fetchedImages
+	const images = await fetchImagesFromFolder();
 	return (<>
 		<div className="flex flex-wrap w-full h-full gap-2 p-4 md:p-10  bg-slate-700">
 			<h3 className="flex w-full items-center justify-center text-xs sm:text-sm md:text-base lg:text-lg text-pretty text-slate-100 font-extrabold">

@@ -8,7 +8,6 @@ interface CloudinaryResponse {
   resources: CloudinaryResource[];
 }
 
-export let fetchedImages: string[] = [];
 export async function fetchImagesFromFolder(): Promise<string[]> {
   
   try {
@@ -26,12 +25,9 @@ export async function fetchImagesFromFolder(): Promise<string[]> {
     },
   }
     );
-    fetchedImages = response.data.resources.map((resource) => resource.secure_url);
-return fetchedImages
+return response.data.resources.map((resource) => resource.secure_url);
   } catch (err: any) {
     console.error("Error fetching images:", err.response?.data || err.message);
     throw err;
   }
 }
-
-await fetchImagesFromFolder()
