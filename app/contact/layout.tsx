@@ -1,5 +1,4 @@
 import ContactFooter from "@/components/footer/ContactFooter";
-import { MapPin } from "lucide-react";
 import React from "react";
 
 const ContactPageLayout = ({

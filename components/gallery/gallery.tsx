@@ -7,7 +7,7 @@ import {
 	DialogTitle,
 	DialogTrigger
 } from "@/components/ui/dialog";
-import { fetchedImages, fetchImagesFromFolder } from "@/utils/fetchImages";
+import { fetchedImages } from "@/utils/fetchImages";
 import PhotoShow from "./photoShow";
 
 const Gallery = async () => {
@@ -28,7 +28,6 @@ const Gallery = async () => {
 								<DialogHeader>
 									<DialogTitle></DialogTitle>
 									<DialogDescription>
-										
 									</DialogDescription>
 								</DialogHeader>
 								<PhotoShow image={image} modal />
