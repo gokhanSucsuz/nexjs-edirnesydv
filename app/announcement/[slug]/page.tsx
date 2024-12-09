@@ -1,7 +1,8 @@
 import React from "react";
 
-const AnnouncementDetailPage = ({ params }: { params: { slug: string } }) => {
-	const { slug } = params;
+type ParamsType = Promise<{ slug: string }>;
+const AnnouncementDetailPage = async ({ params }: { params: ParamsType }) => {
+	const { slug } = await params;
 	return (
 		<div>
 			<div>AnnouncementDetailPage</div>
