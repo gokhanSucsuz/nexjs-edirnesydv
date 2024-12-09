@@ -10,29 +10,14 @@ export function AidCards() {
 				VAKFIMIZIN YARDIM TÜRLERİ
 			</h3>
 			{helpPrograms.map(program => {
-				return (
-					<div
-						key={program.id}
-						className="basis-[15em] flex-grow flex-shrink flex flex-wrap items-center justify-center"
-					>
-						<Link
-							href={program.link}
-							className="relative flex flex-1 group items-start transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-bgDefault p-3 rounded-md"
-						>
-							<div className="w-0 h-2 bg-white absolute top-1/2 left-0" />
-							<Image
-								src="/together.gif"
-								alt="alt"
-								width={1000}
-								height={1000}
-								className="w-10 h-10 mr-2 rounded-full"
-							/>
-							<div className="flex flex-wrap text-center">
+				return <div key={program.id} className="basis-[15em] flex-grow flex-shrink flex flex-wrap items-center justify-center">
+						<Link href={program.link} className="flex flex-1 group items-center hover:underline p-3 rounded-md">
+							<Image src="/info.svg" alt="alt" width={1000} height={1000} className="w-10 h-10 mr-2 rounded-full" />
+							<div className="flex flex-wrap ">
 								{program.name}
 							</div>
 						</Link>
-					</div>
-				);
+					</div>;
 			})}
 		</section>
 	);

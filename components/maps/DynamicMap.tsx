@@ -2,7 +2,7 @@
 import dynamic from "next/dynamic";
 import { useMemo } from "react";
 
-export default function MyPage() {
+const DynamicMap = ({ page }: { page: boolean }) => {
 	const Map = useMemo(
 		() =>
 			dynamic(() => import("@/components/maps/Map"), {
@@ -14,7 +14,8 @@ export default function MyPage() {
 
 	return (
 		<div>
-			<Map />
+			<Map page={page} />
 		</div>
 	);
-}
+};
+export default DynamicMap;

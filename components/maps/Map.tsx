@@ -17,7 +17,7 @@ const markerIcon = icon({
 	iconSize: [20, 30]
 });
 
-export default function MyMap() {
+export default function MyMap({ page }: { page: boolean }) {
 	const defaultLocation = [41.679422489582436, 26.555350374890356] as [
 		number,
 		number
@@ -28,7 +28,9 @@ export default function MyMap() {
 			zoom={16}
 			zoomControl={false}
 			scrollWheelZoom={false}
-			className="w-[240px] h-[200px] sm:w-[500px] rounded"
+			className={`${page
+				? "w-full h-[40em]"
+				: "w-[240px] h-[200px] sm:w-[500px]"} rounded z-0`}
 		>
 			<TileLayer
 				attribution="&copy; <a href=&quot;https://www.openstreetmap.org/copyright&quot;>OpenStreetMap</a> contributors"
@@ -37,7 +39,8 @@ export default function MyMap() {
 			<ZoomControl position="topright" />
 			<Marker position={defaultLocation} icon={markerIcon}>
 				<Popup>
-					A pretty CSS3 popup. <br /> Easily customizable.
+					T.C. <br /> Edirne Valiliği <br /> Sosyal Yardımlaşma ve Dayanışma
+					Vakfı Başkanlığı
 				</Popup>
 			</Marker>
 		</MapContainer>

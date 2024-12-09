@@ -76,37 +76,37 @@ export const bannerLinks = [
 	{
 		id: 2,
 		name: "Sosyal Yardımlar Genel Müdürlüğü",
-		link: "/aile-bakanligi.png",
+		link: "/aile-bakanligi.svg",
 		url: "https://www.aile.gov.tr/"
 	},
 	{
 		id: 3,
 		name: "T.C. İçişleri Bakanlığı",
-		link: "/icisleri.png",
+		link: "/icisleri.svg",
 		url: "https://www.icisleri.gov.tr/"
 	},
 	{
 		id: 4,
 		name: "e-Devlet",
-		link: "/edevlet.png",
+		link: "/edevlet.svg",
 		url: "https://www.turkiye.gov.tr/"
 	},
 	{
 		id: 5,
 		name: "CİMER",
-		link: "/cimer.png",
+		link: "/cimer.svg",
 		url: "https://www.cimer.gov.tr/"
 	},
 	{
 		id: 6,
 		name: "Açık Kapı",
-		link: "/acik-kapi.png",
+		link: "/acik-kapi.svg",
 		url: "https://www.acikkapi.gov.tr/"
 	},
 	{
 		id: 7,
 		name: "T.C. Edirne Valiliği",
-		link: "/edirne-valiligi.png",
+		link: "/edirne-valiligi.svg",
 		url: "https://www.edirne.gov.tr/"
 	}
 ];

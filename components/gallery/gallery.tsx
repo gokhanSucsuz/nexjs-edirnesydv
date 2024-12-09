@@ -7,11 +7,11 @@ import {
 	DialogTitle,
 	DialogTrigger
 } from "@/components/ui/dialog";
-import { fetchImagesFromFolder } from "@/utils/fetchImages";
+import { fetchedImages, fetchImagesFromFolder } from "@/utils/fetchImages";
 import PhotoShow from "./photoShow";
 
 const Gallery = async () => {
-	const images = await fetchImagesFromFolder();
+	const images = fetchedImages
 	return (<>
 		<div className="flex flex-wrap w-full h-full gap-2 p-4 md:p-10  bg-slate-700">
 			<h3 className="flex w-full items-center justify-center text-xs sm:text-sm md:text-base lg:text-lg text-pretty text-slate-100 font-extrabold">
@@ -19,7 +19,7 @@ const Gallery = async () => {
 				</h3>
 			{images.map(image => {
 				return (
-					<div key={image} className="basis-[200px] flex-grow flex-shrink">
+					<div key={image} className="basis-[10em] flex-grow flex-shrink">
 						<Dialog>
 							<DialogTrigger>
 								<PhotoShow image={image} />
