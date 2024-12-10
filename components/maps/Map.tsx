@@ -22,27 +22,13 @@ export default function MyMap({ page }: { page: boolean }) {
 		number,
 		number
 	];
-	return (
-		<MapContainer
-			center={defaultLocation}
-			zoom={16}
-			zoomControl={false}
-			scrollWheelZoom={false}
-			className={`${page
-				? "w-full h-[40em]"
-				: "w-[240px] h-[200px] sm:w-[500px]"} rounded z-0`}
-		>
-			<TileLayer
-				attribution="&copy; <a href=&quot;https://www.openstreetmap.org/copyright&quot;>OpenStreetMap</a> contributors"
-				url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-			/>
+	return <MapContainer center={defaultLocation} zoom={16} zoomControl={false} scrollWheelZoom={false} className={`${page ? "w-full h-[40em]" : "basis-44 h-[25em] "} rounded z-0`}>
+			<TileLayer attribution="&copy; <a href=&quot;https://www.openstreetmap.org/copyright&quot;>OpenStreetMap</a> contributors" url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 			<ZoomControl position="topright" />
 			<Marker position={defaultLocation} icon={markerIcon}>
 				<Popup>
-					T.C. <br /> Edirne Valiliği <br /> Sosyal Yardımlaşma ve Dayanışma
-					Vakfı Başkanlığı
+					T.C. <br /> Edirne Valiliği <br /> Sosyal Yardımlaşma ve Dayanışma Vakfı Başkanlığı
 				</Popup>
 			</Marker>
-		</MapContainer>
-	);
+		</MapContainer>;
 }
