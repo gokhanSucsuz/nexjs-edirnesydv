@@ -24,7 +24,7 @@ export function Slider() {
 							<div className="bg-slate-500 rounded-xl">
 								<div className="relative rounded-xl">
 									<div className="relative">
-										<Image src={`/test/${index + 1}.jpg`} alt="alt" width={1000} height={1000} className=" object-cover rounded-md mx-auto h-[300px] md:h-[400px] lg:h-[500px] xl:h-[600px] w-full" />
+										<Image src={`/test/${index + 1}.svg`} alt="alt" width={1000} height={1000} className=" object-cover rounded-md mx-auto h-[300px] md:h-[400px] lg:h-[500px] xl:h-[600px] w-full" priority loading="eager" />
 									</div>
 									<div className="absolute top-[70%] bg-slate-900 opacity-75 w-full h-[calc(100%-70%)] flex ">
 										<Link href={"/"} className="text-white px-8 py-2 text-xs sm:text-sm md:text-base lg:text-xl hover:underline">

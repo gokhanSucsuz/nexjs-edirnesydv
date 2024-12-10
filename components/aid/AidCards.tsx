@@ -4,8 +4,8 @@ import { helpPrograms } from "@/utils/functions";
 import Image from "next/image";
 
 export function AidCards() {
-	return (
-		<section className="flex flex-wrap w-full bg-red-500 text-slate-100 py-8 rounded-md">
+	return <section className="relative flex flex-wrap w-full bg-red-500 text-slate-100 py-8 rounded-md">
+			<div className="h-2 w-full bg-slate-900 absolute top-0 left-0" />
 			<h3 className="flex w-full justify-center items-center text-xs sm:text-sm md:text-base lg:text-lg text-pretty text-slate-100 font-extrabold py-4 ">
 				VAKFIMIZIN YARDIM TÜRLERİ
 			</h3>
@@ -19,6 +19,5 @@ export function AidCards() {
 						</Link>
 					</div>;
 			})}
-		</section>
-	);
+		</section>;
 }

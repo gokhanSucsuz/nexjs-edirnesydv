@@ -13,7 +13,7 @@ import { fetchImagesFromFolder } from "@/utils/fetchImages";
 const Gallery = async () => {
 	const images = await fetchImagesFromFolder();
 	return (<>
-		<div className="flex flex-wrap w-full h-full gap-2 p-4 md:p-10  bg-slate-700">
+		<div className="flex flex-wrap w-full h-full gap-2 p-4 md:p-10 bg-slate-700">
 			<h3 className="flex w-full items-center justify-center text-xs sm:text-sm md:text-base lg:text-lg text-pretty text-slate-100 font-extrabold">
 					VAKFIMIZDAN KARELER
 				</h3>
@@ -24,8 +24,8 @@ const Gallery = async () => {
 							<DialogTrigger>
 								<PhotoShow image={image} />
 							</DialogTrigger>
-							<DialogContent className="w-[96%] h-[30%] sm:h-[50%] lg:h-[80%] xl:h-[95%] bg-opacity-90 flex items-center justify-center ">
-								<DialogHeader>
+							<DialogContent className="w-full h-[30vh] sm:h-[50vh] md:h-[70vh] lg:h-[85vh] xl:h-[90vh] bg-bgDefault bg-opacity-60 flex items-center justify-center ">
+								<DialogHeader className="hidden">
 									<DialogTitle></DialogTitle>
 									<DialogDescription>
 									</DialogDescription>

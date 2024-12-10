@@ -18,7 +18,7 @@ export function CarouselOrientation() {
 		})
 	);
 	const slug = 1;
-	return <Carousel plugins={[plugin.current]} opts={{ align: "start" }} orientation="vertical" className="w-full max-w-3xl mx-auto">
+	return <Carousel plugins={[plugin.current]} opts={{ align: "start" }} orientation="vertical" className="w-full max-w-3xl mx-auto py-16">
 			<h1 className="text-center py-4 font-extrabold text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl text-bgDefault animate-bounce">
 				DUYURULAR
 			</h1>
