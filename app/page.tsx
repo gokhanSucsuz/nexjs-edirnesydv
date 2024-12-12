@@ -1,5 +1,4 @@
 import { Slider } from "@/components/Slider";
-import { Announcements } from "../components/annoncement/AnnounceOrientation";
 import { AidCards } from "@/components/aid/AidCards";
 import Gallery from "@/components/gallery/gallery";
 import Banners from "@/components/banners/banner";
@@ -10,7 +9,6 @@ export default async function Home() {
 		<main className="flex flex-col w-full gap-8 mx-auto">
 			<Slider />
 			<VakifCards />
-			<Announcements />
 			<AidCards />
 			<Gallery />
 			<Banners />

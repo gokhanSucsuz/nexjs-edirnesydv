@@ -26,25 +26,22 @@ export function Announcements() {
 		})
 	);
 	const slug = 1;
-	return (
-		<Carousel
-			plugins={[plugin.current]}
-			opts={{ align: "start" }}
-			orientation="vertical"
-			className="w-full max-w-3xl mx-auto py-16"
-		>
+	return <Carousel plugins={[plugin.current]} opts={{ align: "center" }} orientation="vertical" className="w-full mx-auto py-2">
 			<h1 className="text-center py-4 font-extrabold text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl text-bgDefault animate-bounce">
 				DUYURULAR
 			</h1>
-			<CarouselContent className="-mt-1 h-[250px] max-h-[600px]">
+			<CarouselContent className="-mt-1 h-[30rem] max-h-[600px] w-full">
 				{Array.from({
 					length: 5
 				}).map((_, index) =>
-					<CarouselItem key={index} className="pt-1 basis-1/2">
-						<div className="p-1">
+					<CarouselItem key={index} className="pt-1 basis-1/4">
+						<div className="p-1 w-full">
 							<Card>
-								<CardContent className="flex items-center justify-center p-6 ">
-									<section className="flex flex-col p-2 mx-auto w-full">
+								<CardContent className="flex items-center justify-center p-2 w-full">
+									<section className="flex border-b w-full h-full rounded-br-full rounded-tr-full ">
+										<span className="w-full h-full">12.12.2024</span>
+									</section>
+									<section className="flex flex-col p-2 mx-auto w-full h-full">
 										<Dialog>
 											<DialogTrigger>
 												<h3 className="font-extrabold relative group flex flex-col gap-2 transition-shadow duration-500">
@@ -67,19 +64,19 @@ export function Announcements() {
 													</h3>
 													<p className="text-ellipsis ">
 														Lorem ipsum dolor sit amet consectetur adipisicing
-														elit. Praesentium dolor sapiente esse atque, itaque
-														rem? Vitae ab at veritatis, voluptates, inventore
-														amet, cum impedit iusto temporibus sunt voluptatibus
-														fuga earum quisquam? Nemo ad quia magni harum.
-														Facilis necessitatibus cupiditate suscipit molestias
-														corporis eaque, consequatur eius quidem error sint
-														unde neque? Lorem ipsum dolor sit amet consectetur
-														adipisicing elit. Quod optio saepe a ab iusto
-														reiciendis incidunt earum, cumque harum voluptatum
-														tenetur voluptates ratione provident architecto
-														doloremque fugiat cum corrupti eveniet sapiente
-														voluptate. Repellendus modi quia nam aliquam quo
-														dolores iusto.
+														elit. Praesentium dolor sapiente esse atque,
+														itaque rem? Vitae ab at veritatis, voluptates,
+														inventore amet, cum impedit iusto temporibus sunt
+														voluptatibus fuga earum quisquam? Nemo ad quia
+														magni harum. Facilis necessitatibus cupiditate
+														suscipit molestias corporis eaque, consequatur
+														eius quidem error sint unde neque? Lorem ipsum
+														dolor sit amet consectetur adipisicing elit. Quod
+														optio saepe a ab iusto reiciendis incidunt earum,
+														cumque harum voluptatum tenetur voluptates ratione
+														provident architecto doloremque fugiat cum
+														corrupti eveniet sapiente voluptate. Repellendus
+														modi quia nam aliquam quo dolores iusto.
 													</p>
 													<span>12.12.2025</span>
 												</Link>
@@ -92,6 +89,5 @@ export function Announcements() {
 					</CarouselItem>
 				)}
 			</CarouselContent>
-		</Carousel>
-	);
+		</Carousel>;
 }

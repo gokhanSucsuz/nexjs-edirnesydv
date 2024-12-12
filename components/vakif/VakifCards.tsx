@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { VakifCard } from "./VakifCard";
+import { Announcements } from "../annoncement/AnnounceOrientation";
 
 const info = [
 	{
@@ -34,10 +35,11 @@ Mesleki Kariyeri
 ];
 const VakifCards = () => {
 	return (
-		<div className="w-[96%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+		<div className="w-[96%] mx-auto grid grid-cols-2 md:grid-cols-3 gap-4">
 			{info.map(data => {
 				return <VakifCard key={data.id} props={data} />;
 			})}
+			<Announcements />
 		</div>
 	);
 };
