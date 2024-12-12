@@ -18,7 +18,7 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 import Link from "next/link";
 
-export function CarouselOrientation() {
+export function Announcements() {
 	const plugin = React.useRef(
 		Autoplay({
 			delay: 3000,
@@ -40,32 +40,32 @@ export function CarouselOrientation() {
 				{Array.from({
 					length: 5
 				}).map((_, index) =>
-					<CarouselItem key={index} className="pt-1 md:basis-1/2">
+					<CarouselItem key={index} className="pt-1 basis-1/2">
 						<div className="p-1">
 							<Card>
 								<CardContent className="flex items-center justify-center p-6 ">
-									<section className="flex flex-col p-2 mx-auto">
+									<section className="flex flex-col p-2 mx-auto w-full">
 										<Dialog>
 											<DialogTrigger>
 												<h3 className="font-extrabold relative group flex flex-col gap-2 transition-shadow duration-500">
-													TITLE
+													TITLE <span>12.12.2025</span>
 													<span className="absolute bottom-0 left-0 w-full h-[2px] transition-all duration-500 group-hover:w-0" />
 												</h3>
 											</DialogTrigger>
-											<DialogContent className="w-full h-[30vh] sm:h-[50vh] md:h-[70vh] lg:h-[85vh] xl:h-[90vh] bg-bgDefault bg-opacity-60 flex items-center justify-center ">
+											<DialogContent className="w-full h-fit py-16 bg-bgDefault bg-opacity-60 flex items-center justify-center ">
 												<DialogHeader className="hidden">
 													<DialogTitle />
 													<DialogDescription />
 												</DialogHeader>
 												<Link
 													href={`/announcement/${slug}`}
-													className="flex flex-col gap-2 p-2 rounded-lg text-slate-100 text-sm sm:text-sm md:text-base "
+													className="flex flex-col gap-2 p-2 rounded-lg text-slate-100 text-xs sm:text-sm md:text-base lg:text-lg "
 												>
 													<h3 className="font-extrabold relative group flex flex-col gap-2 transition-shadow duration-500">
 														TITLE
 														<span className="absolute bottom-0 left-0 w-full h-[2px] transition-all duration-500 group-hover:w-0" />
 													</h3>
-													<p className="line-clamp-4 text-ellipsis ">
+													<p className="text-ellipsis ">
 														Lorem ipsum dolor sit amet consectetur adipisicing
 														elit. Praesentium dolor sapiente esse atque, itaque
 														rem? Vitae ab at veritatis, voluptates, inventore

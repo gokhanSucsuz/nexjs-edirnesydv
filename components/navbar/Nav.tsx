@@ -97,7 +97,7 @@ const Nav = () => {
 					</DropdownMenu>
 				</div>
 			</nav>
-			<nav className="flex sm:hidden items-center justify-end absolute top-0 right-[40%] py-1 bg-bgDefault text-xs font-bold " suppressHydrationWarning>
+			<nav className="flex sm:hidden items-center justify-end absolute top-0 right-[40%] text-xs font-bold " suppressHydrationWarning>
 				<Sheet open={open} onOpenChange={() => setOpen(value => !value)}>
 					<SheetTrigger asChild>
 						<Button variant="outline" size={"icon"}>

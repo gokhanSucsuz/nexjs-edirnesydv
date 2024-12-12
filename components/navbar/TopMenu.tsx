@@ -4,7 +4,7 @@ import React from "react";
 
 const TopMenu = () => {
 	return <section className="flex w-full bg-bgDefault text-xs justify-between">
-			<div className="flex w-full items-center gap-2 text-white px-6 py-1">
+			<div className="flex w-full items-center gap-2 text-white px-6 py-2">
 				<PhoneCall size={16} />
 				<div className="hidden sm:flex">
 					<span>
