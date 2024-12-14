@@ -16,7 +16,7 @@ const Gallery = async () => {
 		<div className="flex flex-wrap w-full h-full gap-2 p-4 md:p-10 bg-slate-700">
 			<h3 className="flex w-full items-center justify-center text-xs sm:text-sm md:text-base lg:text-lg text-pretty text-slate-100 font-extrabold">
 					VAKFIMIZDAN KARELER
-				</h3>
+			</h3>
 			{images.map(image => {
 				return (
 					<div key={image} className="basis-[10em] flex-grow flex-shrink">
