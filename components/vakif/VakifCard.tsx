@@ -13,16 +13,9 @@ type PropsTypes = {
 };
 
 export function VakifCard({ props }: PropsTypes) {
-	return (
-		<div className="flex items-center flex-col justify-center gap-4 text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl rounded-xl">
+	return <div className="flex items-center flex-col justify-center gap-4 text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl rounded-xl shadow-md shadow-bgDefault p-4">
 			<div className="w-full h-full flex justify-center p-4">
-				<Image
-					src={props.url}
-					alt={props.title}
-					width={1000}
-					height={1000}
-					className="w-full h-full object-cover rounded-lg shadow-lg shadow-black priority"
-				/>
+				<Image src={props.url} alt={props.title} width={1000} height={1000} className="w-full h-full object-cover rounded-lg shadow-lg shadow-black priority" />
 			</div>
 			<div className="flex flex-col gap-4 w-full">
 				<h3 className="capitalize font-extrabold text-bgDefault">
@@ -33,12 +26,11 @@ export function VakifCard({ props }: PropsTypes) {
 				</p>
 				<div className="w-full flex justify-end">
 					<Link href={`/vakif/${props.id}`}>
-						<Button className="bg-bgDefault hover:bg-bgDefault/80 text-white hover:text-white/80 hover:shadow-lg hover:shadow-black/80">
+						<Button size={"sm"} className="bg-bgDefault hover:bg-bgDefault/80 text-white hover:text-white/80 hover:shadow-lg hover:shadow-black/80 text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl">
 							Daha Fazla Bilgi
 						</Button>
 					</Link>
 				</div>
 			</div>
-		</div>
-	);
+		</div>;
 }

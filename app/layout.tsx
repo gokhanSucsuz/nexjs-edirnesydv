@@ -54,7 +54,7 @@ export default async function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${robotoCondensed.variable}${luxuriousRoman.className} ${lato.className} ${roboto.variable} ${geistSans.variable} ${geistMono.variable} antialiased bg-[url('/map.svg')] bg-contain min-h-screen flex flex-col`}
+        className={`${robotoCondensed.variable}${luxuriousRoman.className} ${lato.className} ${roboto.variable} ${geistSans.variable} ${geistMono.variable} antialiased bg-[url('/map.svg')] bg-contain min-h-screen flex flex-col w-full`}
       >
         <div className="w-full sticky top-0 z-50">
           <Navbar/>

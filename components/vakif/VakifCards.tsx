@@ -34,14 +34,16 @@ Mesleki Kariyeri
 	}
 ];
 const VakifCards = () => {
-	return (
-		<div className="w-[96%] mx-auto grid grid-cols-2 md:grid-cols-3 gap-4">
+	return <div className="w-[96%] flex flex-wrap gap-8 px-4 mx-auto">
 			{info.map(data => {
-				return <VakifCard key={data.id} props={data} />;
+				return <div key={data.id} className="flex basis-[10em] flex-grow flex-shrink">
+						<VakifCard key={data.id} props={data} />
+					</div>;
 			})}
-			<Announcements />
-		</div>
-	);
+			<div className="flex basis-[20em] flex-grow flex-shrink">
+				<Announcements />
+			</div>
+		</div>;
 };
 
 export default VakifCards;
