@@ -47,7 +47,7 @@ export function Announcements() {
 			onMouseLeave={plugin.current.reset}
 			className="w-full h-[24em] mx-auto my-4"
 		>
-			<h1 className="text-center text-xs sm:text-sm md:text-base lg:text-lg uppercase font-extrabold py-4 bg-bgDefault text-white rounded-t-full m-1">
+			<h1 className="text-center text-xs sm:text-sm md:text-base lg:text-lg uppercase font-extrabold py-4 bg-bgDefault text-white rounded-t-full ">
 				Duyurular
 			</h1>
 			<CarouselContent className=" max-h-[24em] w-full">
@@ -58,7 +58,7 @@ export function Announcements() {
 								<div className="flex items-center justify-center w-full">
 									<section className="flex border border-b w-1/3 h-full rounded-br-full rounded-tr-full bg-bgDefault bg-opacity-75 text-white ">
 										<span className="w-full h-[4em] flex items-center justify-center text-xs sm:text-sm md:text-base lg:text-lg">
-											{dateFormat(announce?.createdAt)}
+											{dateFormat(announce?.createdAt).slice(0, 14)}
 										</span>
 									</section>
 									<section className="flex flex-col mx-auto w-2/3 ">

@@ -54,13 +54,16 @@ export default async function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${robotoCondensed.variable}${luxuriousRoman.className} ${lato.className} ${roboto.variable} ${geistSans.variable} ${geistMono.variable} antialiased bg-[url('/map.svg')] bg-contain min-h-screen flex flex-col w-full`}
+        className={`${robotoCondensed.variable}${luxuriousRoman.className} ${lato.className} ${roboto.variable} ${geistSans.variable} ${geistMono.variable} antialiased bg-[url('/map.svg')] bg-contain min-h-screen flex flex-col `}
       >
         <div className="w-full sticky top-0 z-50">
           <Navbar/>
         </div>
-        {children}
-          <Footer />
+        <div className="w-[90%] mx-auto pt-1 rounded-lg">
+          {children}
+          
+        </div>
+        <Footer />
       </body>
     </html>
   );

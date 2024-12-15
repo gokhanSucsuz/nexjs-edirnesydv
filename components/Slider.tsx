@@ -31,7 +31,7 @@ export function Slider() {
 		<section className="flex w-full">
 			<Carousel
 				plugins={[plugin.current]}
-				className="relative h-[300px] md:h-[400px] lg:h-[500px] xl:h-[600px] w-full "
+				className="relative h-[300px] md:h-[400px] lg:h-[500px] xl:h-[600px] w-full rounded-lg"
 				onMouseEnter={plugin.current.stop}
 				onMouseLeave={plugin.current.reset}
 			>
@@ -46,12 +46,12 @@ export function Slider() {
 											alt="alt"
 											width={1000}
 											height={1000}
-											className=" object-cover rounded-md mx-auto h-[300px] md:h-[400px] lg:h-[500px] xl:h-[600px] w-full bg-white"
+											className=" object-cover rounded-md mx-auto h-[300px] md:h-[400px] lg:h-[500px] xl:h-[600px] w-full bg-white "
 											priority
 											loading="eager"
 										/>
 									</div>
-									<div className="absolute top-[70%] bg-slate-900 opacity-75 w-full h-[calc(100%-70%)] flex ">
+									<div className="absolute top-[70%] bg-slate-900 opacity-75 w-full h-[calc(100%-70%)] flex rounded-lg">
 										<Link
 											href={`/articles/${article.documentId}`}
 											className="text-white px-8 py-2 text-xs sm:text-sm md:text-base lg:text-xl hover:underline"
