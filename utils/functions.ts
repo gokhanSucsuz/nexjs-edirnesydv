@@ -3,8 +3,8 @@ import { link } from "fs";
 export const helpPrograms = [
 	{
 		id: 1,
-		name: "Ağır Kronik Hastalara Elektrik Yardımı",
-		link: "/aid/agir-kronik-hastalara-elektrik-yardimi"
+		name: "Kronik Hastalık Yardımı",
+		link: "/aid/kronik-hastalik-yardimi"
 	},
 	{
 		id: 2,

@@ -45,12 +45,13 @@ const ArticlePage = async ({ params }: { params: ParamsType }) => {
 	const { slug } = await params;
 	const articles:Article[] = await fetchDataFromStrapi("/articles?populate=*");
     const article = articles.find((a: Article) => a.documentId === slug);
-    const latestArticles = await fetchDataFromStrapi("/articles?populate=*&sort[0]=createdAt:desc&pagination[limit]=3");
+    const latestArticles = await fetchDataFromStrapi("/articles?populate=*&sort[0]=createdAt:desc&pagination[limit]=4");
+    const limitedArticle = latestArticles.filter((a: Article) => a.documentId !== article?.documentId);
 	return (
-        <div className="flex flex-col md:flex-row w-[96%] flex-wrap mx-auto gap-2 md:gap-4 text-xs sm:text-sm md:text-base lg:text-lg px-2 ">
-        <div className="flex flex-col p-4 my-8 mx-auto  shadow-xl shadow-red-200 rounded-lg basis-[27em] lg:basis-[36em] flex-grow flex-shrink">
+        <div className="flex flex-col md:flex-row w-[96%] flex-wrap mx-auto gap-4 md:gap-8 text-xs sm:text-sm md:text-base lg:text-lg px-2 ">
+        <div className="flex flex-col p-4 my-8 mx-auto  shadow-xl shadow-red-200 rounded-lg basis-[27em] lg:basis-[36em] xl:basis-[48em] flex-grow flex-shrink">
             <h1 className="uppercase font-extrabold py-4  text-bgDefault">{article?.title}</h1>
-            <Image src={article?.image && `${process.env.NEXT_PUBLIC_STRAPI_URL}${article?.image.url}` || "/no-image.svg"} alt={article?.image?.name || ""} width={1000} height={600} className="w-[45em] h-auto object-cover  rounded-xl mb-8 " />
+            <Image src={article?.image && `${process.env.NEXT_PUBLIC_STRAPI_URL}${article?.image.url}` || "/no-image.svg"} alt={article?.image?.name || ""} width={1000} height={600} className="w-[45em] h-auto object-cover mx-auto rounded-xl mb-8 " />
             <p>{article?.content.map((c:any)=> c.children[0].text || "").join(" ")}</p>
                 <span>{article && dateFormat(article?.createdAt)}</span>
                     
@@ -85,7 +86,7 @@ const ArticlePage = async ({ params }: { params: ParamsType }) => {
                      </div>
             </div>
             <div className="flex flex-wrap flex-row md:flex-col mx-auto basis-[12em] flex-grow flex-shrink">
-            {latestArticles && latestArticles.map((a:Article)=>(
+            {limitedArticle && limitedArticle.map((a:Article)=>(
                 <Link href={`/articles/${a.documentId}`} key={a.documentId} className="flex flex-col p-2 my-4 mx-auto shadow-xl shadow-red-200 rounded-lg basis-[12em] flex-grow flex-shrink">
                     <h1 className="uppercase font-extrabold py-4 text-bgDefault">{a?.title}</h1>
                     <Image src={a?.image && `${process.env.NEXT_PUBLIC_STRAPI_URL}${a?.image.url}` || "/no-image.svg"} alt={a?.image?.name || ""} width={1000} height={600} className="w-[45em] h-auto object-cover  rounded-xl mb-8 " />
