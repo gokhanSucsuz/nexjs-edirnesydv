@@ -1,8 +1,20 @@
 import * as React from "react";
 import Link from "next/link";
-import { helpPrograms } from "@/utils/functions";
 import Image from "next/image";
 import { fetchDataFromStrapi } from "@/utils/strapi";
+
+type HelpTypes = {
+	documentId: string;
+	typeOf: string;
+	program: string;
+	scope: string;
+	whoCanBenefit: string;
+	requireDocs: string;
+	amount: string;
+	paymentPeriod: string;
+	applicant: string;
+	createdAt: string;
+};
 
 export async function AidCards() {
 	const helps = await fetchDataFromStrapi(
@@ -14,7 +26,7 @@ export async function AidCards() {
 			<h3 className="flex w-full justify-center items-center text-xs sm:text-sm md:text-base lg:text-lg text-pretty text-slate-100 font-extrabold py-4 ">
 				VAKFIMIZIN YARDIM TÜRLERİ
 			</h3>
-			{helps.map((program: any) => {
+			{helps.map((program: HelpTypes) => {
 				return (
 					<div
 						key={program.documentId}

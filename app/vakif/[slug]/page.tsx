@@ -1,12 +1,12 @@
 import React from "react";
 
-const VakifPage = ({ params }: { params: { slug: string } }) => {
-	const { slug } = params;
-	console.log(slug);
+type ParamsType = Promise<{ slug: string }>;
+
+const VakifPage = async ({ params }: { params: ParamsType }) => {
+	const { slug } = await params;
 	return (
 		<div>
 			{slug}
-			fdsasdf
 		</div>
 	);
 };

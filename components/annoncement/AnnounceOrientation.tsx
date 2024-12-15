@@ -20,8 +20,24 @@ import Link from "next/link";
 import { fetchDataFromStrapi } from "@/utils/strapi";
 import { dateFormat } from "@/utils/dateFormat";
 
+
+type AnnounceTypes = {
+  documentId: string;
+  title: string;
+	content: [
+		{
+			children?: [
+				{
+					text?: string;
+				}
+			]
+	  }
+  ]
+  createdAt: string;
+};
+
 export function Announcements() {
-	const [announcements, setAnnouncements] = React.useState<string[]>([]);
+	const [announcements, setAnnouncements] = React.useState<AnnounceTypes[]>([]);
 	React.useEffect(() => {
 		const fetchData = async () => {
 			const data = await fetchDataFromStrapi(
@@ -37,7 +53,7 @@ export function Announcements() {
 			stopOnInteraction: true
 		})
 	);
-	const slug = 1;
+	
 	return (
 		<Carousel
 			plugins={[plugin.current]}
@@ -51,7 +67,7 @@ export function Announcements() {
 				Duyurular
 			</h1>
 			<CarouselContent className=" max-h-[24em] w-full">
-				{announcements?.map((announce: any) =>
+				{announcements?.map((announce: AnnounceTypes) =>
 					<CarouselItem key={announce?.documentId} className="basis-1/5 w-full px-2">
 						<Card>
 							<CardContent className="w-full flex items-center ">
@@ -82,7 +98,11 @@ export function Announcements() {
 														<span className="absolute bottom-0 left-0 w-full h-[2px] transition-all duration-500 group-hover:w-0" />
 													</h3>
 													<p className="text-ellipsis ">
-														{announce?.content.map((item:any)=> item.children[0].text)}
+														{announce?.content.map((item, index) => (
+															<p key={index}>
+																{item?.children?.[0].text || 'No content available'}
+															</p>
+															))}
 													</p>
 													<span>{dateFormat(announce?.createdAt)}</span>
 												</Link>

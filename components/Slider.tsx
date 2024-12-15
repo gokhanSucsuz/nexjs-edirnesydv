@@ -12,8 +12,36 @@ import Link from "next/link";
 import { fetchDataFromStrapi } from "@/utils/strapi";
 import { dateFormat } from "@/utils/dateFormat";
 
+interface ArticleType {
+	documentId: string;
+	title: string;
+    content: [
+        {
+            children?: [
+                {
+                    text:string
+                }
+            ]
+        }
+    ]
+    image: {
+        url?: string;
+        name?: string;
+    }
+    otherImages?: [
+        {
+            url?: string;
+            name?: string;
+            documentId?: string;
+            mime?: string;
+        }
+	]
+	date: string;
+	createdAt: string;
+}
+
 export function Slider() {
-	const [articles, setArticles] = React.useState<any[]>([]);
+	const [articles, setArticles] = React.useState<ArticleType[]>([]);
 	React.useEffect(() => {
 		const fetchData = async () => {
 			const articles = await fetchDataFromStrapi(
@@ -36,13 +64,13 @@ export function Slider() {
 				onMouseLeave={plugin.current.reset}
 			>
 				<CarouselContent>
-					{articles?.map((article, index) =>
+					{articles?.map((article: ArticleType, index) =>
 						<CarouselItem key={index}>
 							<div className="bg-slate-500 rounded-xl">
 								<div className="relative rounded-xl">
 									<div className="relative">
 										<Image
-											src={process.env.NEXT_PUBLIC_STRAPI_URL + article.image?.url || "/no_image.svg"}
+											src={article?.image?.url ? process.env.NEXT_PUBLIC_STRAPI_URL + article?.image?.url : "/no_image.svg"}
 											alt="alt"
 											width={1000}
 											height={1000}
@@ -59,15 +87,15 @@ export function Slider() {
 											<p className="font-extrabold">
 												{article.title}
 											</p>
-											<p className="leading-snug line-clamp-2 ">
-												{article.content[0].children[0].text}
+											<p className="leading-snug line-clamp-2">
+											{article?.content?.[0]?.children?.[0]?.text || "No content available"}
 											</p>
 										</Link>
 										<div className="absolute top-[80%] left-8 text-white text-xs sm:text-sm ">
 											<div className="flex items-center gap-2">
 												<Calendar size={16} />
 												<span>
-													{dateFormat(article.date)}
+													{dateFormat(article?.date)}
 												</span>
 											</div>
 										</div>

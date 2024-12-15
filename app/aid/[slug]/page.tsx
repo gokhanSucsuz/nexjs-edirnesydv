@@ -23,10 +23,10 @@ const AidPage = async ({ params }: { params: ParamsType }) => {
 	const helps = await fetchDataFromStrapi(
 		"/help-types?populate=*&sort=typeOf:asc"
 	);
-	const aid = helps.find((help: any) => {
+	const aid = helps.find((help: HelpTypes) => {
 		return help.documentId === slug;
     });
-    const amountAid = aid.amount.split("\n").map((amount: any) => amount.trim());
+    const amountAid = aid.amount.split("\n").map((amount: HelpTypes) => amount);
 
 
 	return (
@@ -40,7 +40,7 @@ const AidPage = async ({ params }: { params: ParamsType }) => {
                     <li className="py-2"><span className="font-bold capitalize">Başvuran: </span>{aid?.applicant}</li>
                     <li className="py-2"><span className="font-bold capitalize">Kimler faydalanabilir?: </span>{aid?.whoCanBenefit}</li>
                     <li className="py-2"><span className="font-bold capitalize">Gerekli belgeler: </span>{aid?.requiredDocs}</li>
-                    <li className="py-2"><span className="font-bold capitalize">Miktar: </span>{amountAid.map((amount: any) => <p key={amount}>{amount}</p>)}</li>
+                    <li className="py-2"><span className="font-bold capitalize">Miktar: </span>{amountAid.map((amount: string) => <p key={amount}>{amount}</p>)}</li>
                     <li className="py-2"><span className="font-bold capitalize">Ödeme periyodu: </span>{aid?.paymentPeriod}</li>
                     
                 </ul>
