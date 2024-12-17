@@ -1,6 +1,6 @@
 import React from "react";
 import { VakifCard } from "./ManagerCard";
-import { Announcements } from "../annoncement/AnnounceOrientation";
+import { Announcements } from "../announcement/AnnounceOrientation";
 import { fetchDataFromStrapi } from "@/utils/strapi";
 
 type ManagerTypes = {
