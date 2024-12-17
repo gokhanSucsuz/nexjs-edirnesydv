@@ -59,7 +59,7 @@ export default async function RootLayout({
         <div className="w-full sticky top-0 z-50">
           <Navbar/>
         </div>
-        <div className="w-[80%] mx-auto pt-1 rounded-lg">
+        <div className="w-full sm:w-[75%] mx-auto pt-1 rounded-lg">
           {children}
         </div>
         <Footer />
