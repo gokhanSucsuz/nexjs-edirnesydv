@@ -2,7 +2,7 @@ import { Slider } from "@/components/Slider";
 import { AidCards } from "@/components/aid/AidCards";
 import Gallery from "@/components/gallery/gallery";
 import Banners from "@/components/banners/banner";
-import VakifCards from "@/components/vakif/VakifCards";
+import VakifCards from "@/components/managers/ManagerCards";
 
 export default async function Home() {
 	return (

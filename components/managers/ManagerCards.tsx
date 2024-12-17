@@ -1,5 +1,5 @@
 import React from "react";
-import { VakifCard } from "./VakifCard";
+import { VakifCard } from "./ManagerCard";
 import { Announcements } from "../annoncement/AnnounceOrientation";
 import { fetchDataFromStrapi } from "@/utils/strapi";
 
