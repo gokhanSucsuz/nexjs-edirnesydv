@@ -36,10 +36,11 @@ export async function VakifCard({ props }: ManagerTypes) {
 				/>
 			</div>
 			<div className="flex flex-col gap-4 w-full">
-				<h3 className="capitalize font-extrabold text-bgDefault">
-					{title}
+				<h3 className="capitalize font-extrabold text-bgDefault text-center">
+					{title.split("-")[0]}
 				</h3>
-				<h5  className="capitalize font-semibold text-bgDefault">{name}</h5>
+					<h4 className="capitalize font-extrabold text-bgDefault text-center">{title.split("-")[1]}</h4>
+				<h5  className="capitalize font-semibold text-bgDefault text-center">{name}</h5>
 				<div className="line-clamp-4 text-slate-700">
 					{biography.map((item: BiographyItem, index: number) => {
 						return (
@@ -50,7 +51,7 @@ export async function VakifCard({ props }: ManagerTypes) {
 					})}
 				</div>
 				<div className="w-full flex justify-end">
-					<Link href={`/vakif/${documentId}`}>
+					<Link href={`/managers/${documentId}`}>
 						<Button
 							size={"sm"}
 							className="bg-bgDefault hover:bg-bgDefault/80 text-white hover:text-white/80 hover:shadow-lg hover:shadow-black/80 text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl"

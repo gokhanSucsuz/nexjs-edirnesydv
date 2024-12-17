@@ -41,19 +41,15 @@ const Nav = () => {
 						<DropdownMenuContent>
 							<DropdownMenuSeparator />
 							<DropdownMenuItem className="uppercase cursor-pointer p-2 rounded-lg">
-								<Link href="/corporate">kurumsal</Link>
+								<Link href="/vakif-personeli">Vakıf Çalışanları</Link>
 							</DropdownMenuItem>
 							<DropdownMenuSeparator />
 							<DropdownMenuItem className="uppercase cursor-pointer p-2 rounded-lg">
-								<Link href="/mutevelli-heyeti">mutevelli heyet</Link>
+								<Link href="/proje-personeli">Proje Çalışanları</Link>
 							</DropdownMenuItem>
 							<DropdownMenuSeparator />
 							<DropdownMenuItem className="uppercase cursor-pointer p-2 rounded-lg">
-								<Link href="/vakif-muduru">vakıf müdürü</Link>
-							</DropdownMenuItem>
-							<DropdownMenuSeparator />
-							<DropdownMenuItem className="uppercase cursor-pointer p-2 rounded-lg">
-								<Link href={"/vakif-birimleri"}>vakıf birimleri</Link>
+								<Link href="/mutevelli-heyeti">mutevelli heyeti</Link>
 							</DropdownMenuItem>
 							<DropdownMenuSeparator />
 							<DropdownMenuItem className="uppercase cursor-pointer p-2 rounded-lg">
@@ -121,14 +117,26 @@ const Nav = () => {
 									<AccordionContent className="flex flex-col gap-4 text-xs">
 										<span className="flex gap-2 hover:underline">
 											<ChevronRight className="w-4 h-4" />
-											<Link href="/corporate" className="uppercase cursor-pointer" onClick={() => setOpen(false)}>
-												kurumsal
+											<Link href="/personel" className="uppercase cursor-pointer" onClick={() => setOpen(false)}>
+												vakif çalışanları
+											</Link>
+										</span>
+										<span className="flex gap-2 hover:underline">
+											<ChevronRight className="w-4 h-4" />
+											<Link href="/personel" className="uppercase cursor-pointer" onClick={() => setOpen(false)}>
+												proje çalışanları
 											</Link>
 										</span>
 										<span className="flex gap-2 hover:underline">
 											<ChevronRight className="w-4 h-4" />
 											<Link href="/mutevelli-heyeti" className="uppercase cursor-pointer" onClick={() => setOpen(false)}>
 												mütevelli heyeti
+											</Link>
+										</span>
+										<span className="flex gap-2 hover:underline">
+											<ChevronRight className="w-4 h-4" />
+											<Link href="/hakkimizda" className="uppercase cursor-pointer" onClick={() => setOpen(false)}>
+												hakkımızda
 											</Link>
 										</span>
 									</AccordionContent>

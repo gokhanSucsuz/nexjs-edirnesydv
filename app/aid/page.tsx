@@ -17,7 +17,7 @@ type HelpTypes = {
 const AidPage = async () => {
 	const helps = await fetchDataFromStrapi("/help-types?populate=*");
 
-	return <div className="flex flex-wrap flex-col  mx-auto flex-grow flex-shrink py-8 shadow-lg  shadow-bgDefault">
+	return <div className="flex flex-wrap flex-col  mx-auto flex-grow flex-shrink py-8 my-8 shadow-lg  shadow-bgDefault">
 		<h1 className="text-center m-4 p-4 rounded-lg text-white bg-bgDefault uppercase font-extrabold ">Tüm Yardımlar</h1>
 				<div className="flex flex-wrap mx-auto flex-grow flex-shrink ">
             {helps.map((help:HelpTypes)=>(

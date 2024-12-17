@@ -46,14 +46,12 @@ const AidPage = async ({ params }: { params: ParamsType }) => {
                 </ul>
                 
 			</div>
-			<div className="flex  flex-wrap flex-row md:flex-col mx-auto  flex-grow flex-shrink">
-				<div className="flex flex-wrap flex-row md:flex-col mx-auto  flex-grow flex-shrink ">
+			<div className="flex flex-wrap flex-row 2xl:flex-col mx-auto flex-grow flex-shrink">
             {helps.map((help:HelpTypes)=>(
-                <Link href={`/aid/${help.documentId}`} key={help.documentId} className="flex flex-col rounded-lg p-3 shadow-lg items-center ">
-                    <h1 className="uppercase font-extrabold  text-bgDefault">{help?.program}</h1>
+                <Link href={`/aid/${help.documentId}`} key={help.documentId} className="flex flex-col rounded-lg p-3 shadow-lg ">
+                    <h1 className="uppercase font-extrabold text-bgDefault">{help?.program}</h1>
                 </Link>
             ))}
-            </div>
 			</div>
 		</div>
 	);

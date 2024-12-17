@@ -26,7 +26,7 @@ const Footer = () => {
 				</div>
 
 				<div className="flex flex-col gap-2 text-white text-xs sm:text-sm md:text-base lg:text-lg shadow-2xl p-4  rounded-xl basis-[10em] flex-grow flex-shrink">
-					<h3 className="w-full font-bold text-center group">
+					<h3 className="w-full font-bold indent-5 group">
 						İLETİŞİM
 						<div className="w-0 h-[1px] bg-slate-50 group-hover:w-full transition-all duration-700 mt-2" />
 					</h3>
