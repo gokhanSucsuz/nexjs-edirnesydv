@@ -11,12 +11,6 @@ const nextConfig: NextConfig = {
         port: "",
         pathname: "/coolpisces/**",
       },
-      {
-        protocol: "http",
-        hostname: "localhost",
-        port: "1339",
-        pathname: "/**",
-      }
     ],
   },
 };
