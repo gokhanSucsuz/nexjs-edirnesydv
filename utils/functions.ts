@@ -75,7 +75,7 @@ export const bannerLinks = [
 	},
 	{
 		id: 2,
-		name: "Sosyal Yardımlar Genel Müdürlüğü",
+		name: "SYGM",
 		link: "/aile-bakanligi.svg",
 		url: "https://www.aile.gov.tr/"
 	},

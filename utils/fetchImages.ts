@@ -2,6 +2,7 @@ import axios, { AxiosResponse } from "axios";
 
 interface CloudinaryResource {
   secure_url: string;
+  asset_folder: string;
 }
 
 interface CloudinaryResponse {
@@ -25,7 +26,8 @@ export async function fetchImagesFromFolder(): Promise<string[]> {
     },
   }
     );
-return response.data.resources.map((resource) => resource.secure_url);
+     		const filteredImages = response.data.resources.filter((image)=> image?.asset_folder !== "personals").map(image => image?.secure_url);
+    return filteredImages
   } catch (err: any) {
     console.error("Error fetching images:", err.response?.data || err.message);
     throw err;

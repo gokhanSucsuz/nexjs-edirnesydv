@@ -12,6 +12,7 @@ import { fetchImagesFromFolder } from "@/utils/fetchImages";
 
 const Gallery = async () => {
 	const images = await fetchImagesFromFolder();
+
 	return (<>
 		<div className="flex flex-wrap w-full h-full gap-2 p-4 md:p-10 bg-slate-700 rounded-lg">
 			<h3 className="flex w-full items-center justify-center text-xs sm:text-sm md:text-base lg:text-lg text-pretty text-slate-100 font-extrabold rounded-lg">
