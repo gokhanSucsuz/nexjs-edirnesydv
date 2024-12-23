@@ -44,7 +44,6 @@ const Nav = () => {
 		const sodams = async () => {
 			const data = await fetchDataFromStrapi("/sodam-centers?populate=*");
 			setSodams(data);
-			console.log(data);
 		};
 		sodams();
 	}, []);

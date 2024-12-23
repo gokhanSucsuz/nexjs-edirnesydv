@@ -4,7 +4,7 @@ import Link from "next/link";
 import React from "react";
 import { motion, useAnimation } from "framer-motion";
 
-const Banner = () => {
+const TestPage = () => {
 	const controls = useAnimation();
 	return (
 		<section className="flex flex-wrap md:flex-nowrap items-center justify-around gap-2 bg-slate-100 shadow-2xl shadow-black px-4 mb-2">
@@ -41,13 +41,12 @@ const Banner = () => {
 						controls.set({ opacity: 0, y: -50 });
 					}}
 				>
-					<div className="glowing-line" />
 					<Image
 						src={"/ataturk_flag.svg"}
 						alt="edirnesydv logo"
 						width={1000}
 						height={1000}
-						className="w-24 h-12 md:w-32 md:h-20"
+						className="w-24 h-12 md:w-32 md:h-20 waving-flag"
 					/>
 				</motion.div>
 			</div>
@@ -55,4 +54,4 @@ const Banner = () => {
 	);
 };
 
-export default Banner;
+export default TestPage;

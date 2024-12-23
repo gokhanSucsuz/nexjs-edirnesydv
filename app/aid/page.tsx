@@ -1,3 +1,4 @@
+import AidMotion from "@/components/aid/AidMotion";
 import { fetchDataFromStrapi } from "@/utils/strapi";
 import Link from "next/link";
 import React from "react";

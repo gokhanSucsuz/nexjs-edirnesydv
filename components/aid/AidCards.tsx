@@ -26,7 +26,7 @@ export async function AidCards() {
 				VAKFIMIZIN YARDIM TÜRLERİ
 			</h3>
 			{helps.map((program: HelpTypes, index: number) => {
-				return <AidMotion key={index} program={program} index={index} />;
+				return <AidMotion key={program.documentId} program={program} index={index} />;
 			})}
 		</section>
 	);
