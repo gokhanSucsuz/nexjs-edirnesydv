@@ -17,7 +17,7 @@ const Footer = () => {
 	const pathname = usePathname()
 	return (<>
 	
-	{pathname !== "/contact" && (
+	{(pathname !== "/contact" && !pathname.startsWith("/sodamCenter/")) && (
 		<div className="relative bg-slate-900 text-white py-2 mt-auto bottom-0 ">
 			<div className="bg-bgDefault h-2 w-full absolute top-0 left-0"/>
 			<div className="bg-slate-900 flex-wrap flex items-center justify-around gap-2 p-4 mb-12">

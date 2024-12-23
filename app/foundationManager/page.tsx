@@ -24,7 +24,7 @@ const VakifPage = async () => {
     console.log(foundationManager[0].name)
 
 	return (
-		<div className="flex flex-col items-center text-xs sm:text-sm md:text-base lg:text-lg py-8">
+		<div className="flex flex-col  text-xs sm:text-sm md:text-base lg:text-lg py-8">
 
 			<h3 className="text-center m-4 p-2 rounded-lg uppercase font-extrabold">
 				{foundationManager[0].name}

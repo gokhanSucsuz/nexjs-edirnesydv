@@ -2,7 +2,13 @@
 import dynamic from "next/dynamic";
 import { useMemo } from "react";
 
-const DynamicMap = ({ page }: { page: boolean }) => {
+const DynamicMap = ({
+	page,
+	location
+}: {
+	page: boolean;
+	location?: [number, number];
+}) => {
 	const Map = useMemo(
 		() =>
 			dynamic(() => import("@/components/maps/Map"), {
@@ -14,7 +20,7 @@ const DynamicMap = ({ page }: { page: boolean }) => {
 
 	return (
 		<div>
-			<Map page={page} />
+			<Map page={page} location={location} />
 		</div>
 	);
 };

@@ -1,7 +1,6 @@
 import * as React from "react";
-import Link from "next/link";
-import Image from "next/image";
 import { fetchDataFromStrapi } from "@/utils/strapi";
+import AidMotion from "./AidMotion";
 
 type HelpTypes = {
 	documentId: string;
@@ -26,29 +25,8 @@ export async function AidCards() {
 			<h3 className="flex w-full justify-center items-center text-xs sm:text-sm md:text-base lg:text-lg text-pretty text-slate-100 font-extrabold py-4 ">
 				VAKFIMIZIN YARDIM TÜRLERİ
 			</h3>
-			{helps.map((program: HelpTypes) => {
-				return (
-					<div
-						key={program.documentId}
-						className="basis-[15em] flex-grow flex-shrink flex flex-wrap items-center justify-center"
-					>
-						<Link
-							href={`/aid/${program.documentId}`}
-							className="flex flex-1 group items-center hover:underline p-3 rounded-md"
-						>
-							<Image
-								src="/info.svg"
-								alt="alt"
-								width={1000}
-								height={1000}
-								className="w-10 h-10 mr-2 rounded-full"
-							/>
-							<div className="flex flex-wrap ">
-								{program.program}
-							</div>
-						</Link>
-					</div>
-				);
+			{helps.map((program: HelpTypes, index: number) => {
+				return <AidMotion key={index} program={program} index={index} />;
 			})}
 		</section>
 	);
