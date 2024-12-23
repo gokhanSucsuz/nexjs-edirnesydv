@@ -26,25 +26,22 @@ const AidMotion = ({ program, index }: { program: HelpTypes; index: number }) =>
 				className="basis-[15em] flex-grow flex-shrink flex flex-wrap items-center justify-center"
 				key={index}
 				style={{ margin: "10px 0", padding: "10px", borderRadius: "5px" }}
-				initial={{ opacity: 0, y: -20, rotate: -180 }}
+				initial={{ opacity: 0, x: -50 }}
 				animate={controls}
-				transition={{ duration: 0.3, ease: "easeInOut" }} // Daha hızlı animasyon
+				transition={{ duration: 0.3, ease: "easeInOut", delay: index * 0.2 }}
 				whileInView={{
 					opacity: 1,
-					y: 0,
-					rotate: 0,
+					x: 0
 				}}
 				viewport={{
 					once: false,
 					amount: 0.5,
 				}}
 				onViewportEnter={() => {
-					// Animasyon başlasın
-					controls.start({ opacity: 1, rotate: 0, y: 0 });
+					controls.start({ opacity: 1, x:0});
 				}}
 				onViewportLeave={() => {
-					// Görünüm dışına çıktığında hemen sıfırla
-					controls.set({ opacity: 0, y: -20, rotate: -180 });
+					controls.set({ opacity: 0, x:-50});
 				}}
 			>
 				<Link

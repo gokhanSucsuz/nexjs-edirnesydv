@@ -9,21 +9,31 @@ import {
 	TooltipTrigger
 } from "@/components/ui/tooltip";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 
 export function BannerLinks() {
 	return (
 		<div className="flex flex-wrap w-full gap-12 text-xs sm:text-sm md:text-base lg:text-lg">
 			{bannerLinks.map((banner, index) => {
+				const controls = useAnimation();
 				return (
 					<motion.div
-						key={banner.id}
-						style={{ margin: "10px 0", padding: "10px", borderRadius: "5px" }}
-						initial={{ opacity: 0, y: -20, rotate: -180 }}
-						whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+						key={index}
+						style={{ borderRadius: "5px" }}
+						initial={{ opacity: 0, y: -50 }}
+						animate={controls}
 						transition={{
-							duration: 0.5,
-							delay: index * 0.4 // Her eleman için gecikme
+							duration: 0.3,
+							ease: "easeInOut",
+							delay: index * 0.2
+						}}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: false, amount: 0.5 }}
+						onViewportEnter={() => {
+							controls.start({ opacity: 1, y: 0 });
+						}}
+						onViewportLeave={() => {
+							controls.set({ opacity: 0, y: -50 });
 						}}
 					>
 						<Link
